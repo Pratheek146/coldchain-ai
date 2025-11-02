@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: coldchain-ai
+    env: python
+    plan: free
+    buildCommand: ""
+    startCommand: gunicorn -w 2 -b 0.0.0.0:10000 coldchain_api:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.13
